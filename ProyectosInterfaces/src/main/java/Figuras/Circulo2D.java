@@ -13,8 +13,10 @@ public final class Circulo2D extends Figuras2D {
     
     private final double PI = 3.141592;
 
-    public Circulo2D(int x, int y) {
-        super(x, y);
+    public Circulo2D(int x) {
+        super(x,0);
+        this.hallarArea();
+        this.hallarPerimetro();
     }
     
     @Override

@@ -1,3 +1,6 @@
+
+import Figuras.Impresiones;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +20,7 @@ public class Principal {
      * Constructor de la clase donde se llama a la clase Palabras.
      */
     public Principal(){
+        Impresiones p = new Impresiones();
         
     }
 }

@@ -6,9 +6,11 @@
 package Figuras;
 
 /**
- *
- * @author USER
+ *Clase padrea que hereda de Figuras
+ * 
+ * @author ISAACELEAZAR
  */
+
 public class Figuras3D extends Figuras{
     
     private int x;
@@ -18,6 +20,14 @@ public class Figuras3D extends Figuras{
     private int z;
     
     private double volumen;
+
+    public double getVolumen() {
+        return volumen;
+    }
+
+    public void setVolumen(double volumen) {
+        this.volumen = volumen;
+    }
 
     public Figuras3D(int x, int y, int z) {        
         this.x = x;

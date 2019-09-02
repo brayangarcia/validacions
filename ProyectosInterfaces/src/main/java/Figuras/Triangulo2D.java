@@ -5,56 +5,60 @@
  */
 package Figuras;
 
+import static java.lang.Math.sqrt;
+
 /**
  *
  * @author USER
  */
 public class Triangulo2D extends Figuras2D{
     
-    private int lado3;
+    private int lado3;   
     
-    private int altura;
+    private String tipo;
 
-    public Triangulo2D(int lado3, int altura, int x, int y) {
+    public Triangulo2D(int lado3,int x, int y) {
         super(x, y);
-        this.lado3 = lado3;
-        this.altura = altura;
+        this.lado3 = lado3;        
+        this.hallarArea();
+    }   
+
+    public String getTipo() {
+        return tipo;
     }
 
-    /**
-     *
-     * @param x
-     * @param y
-     * @param lado3
-     * @param altura
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }   
+    
+    /**     
+     * @return
      */
-
-
     public int getLado3() {
         return lado3;
     }
 
     public void setLado3(int lado3) {
         this.lado3 = lado3;
-    }
-
-    public int getAltura() {
-        return altura;
-    }
-
-    public void setAltura(int altura) {
-        this.altura = altura;
-    }
-    
+    }    
     
     @Override
-    public void hallarArea() {
-         this.setArea((this.getX() * this.getAltura())/2);
+    public final void hallarArea() {
+         double semi = (this.getX() + this.getY() + this.getLado3())/2;
+         this.setArea(sqrt(semi*(semi-this.getX())*(semi-this.getY())*(semi-this.getLado3())));
+         if(this.getX() == this.getY() && this.getX() == this.lado3 && this.lado3 == this.getY()){
+             this.setTipo("Equilatero");
+         }
+         else if(this.getX() == this.getY() | this.getX() == this.lado3 | this.lado3 == this.getY()){
+             this.setTipo(("Isósceles"));
+         }
+         else{
+             this.setTipo("Escaleno");
+         }
     }
     
     @Override
     public void hallarPerimetro(){
         this.setPerimetro(this.getX()+this.getY()+this.getLado3());
-    }
-    
+    }    
 }

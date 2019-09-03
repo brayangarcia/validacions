@@ -6,11 +6,14 @@
 package Figuras;
 
 /**
- *
- * @author USER
+ * Clase Padre que representa el comportamiento mínimo 
+ * de las clases que la van a heredar
+ * @author ISAAC ELEAZAR
  */
-public interface Comportamiento {
-    
+public abstract interface Comportamiento {
+    /**
+     * Contructor vacío de la clase
+     */
     public void hallarArea();
     
 }

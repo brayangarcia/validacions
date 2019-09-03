@@ -10,18 +10,20 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- *
+ *Clase donde se piden los datos al usuario y luego se imprimen
+ * dentro de la Lista de tipo Figuras donde fueron guardadas.
  * @author ISAACELEAZAR
  */
 public class Impresiones {
-        
+    /**
+     * Constructor de la clase Impresiones donde se realiza toda la lógica de los datos mostrados al usuario.
+     */
     public Impresiones(){
         List<Figuras> listaFiguras = new ArrayList<>();
-        Figuras fig;
-        Scanner sd = new Scanner(System.in);
+        Figuras fig;        
         Scanner in = new Scanner(System.in);
         int respuesta;
-        int x,y,altura,lado3, z;        
+        int x,y,lado3, z;        
         do{
             System.out.println("Digite el número de la figura que desea ingresar: \n FIGURAS 2D: \n 1.Cuadrado \n 2. Triangulo \n 3. Circulo \n \n FIGURAS 3D: \n 4. Piramide \n 5. Cubo \n 6. Esfera \n Para salir digite otro número.");
             respuesta = in.nextInt();
@@ -66,9 +68,11 @@ public class Impresiones {
                     break;                   
                 case 5:
                     System.out.println("CUBO");
-                    System.out.println("Ingrese el tamaño del lado:");
+                    System.out.println("Ingrese el tamaño del lado 1:");
                     x = in.nextInt();
-                    fig = new Cuadrado3D(x);
+                    System.out.println("Ingrese el tamaño del lado 2:");
+                    y = in.nextInt();
+                    fig = new Cuadrado3D(x,y);
                     listaFiguras.add(fig);
                     break;
                 case 6:
@@ -102,7 +106,7 @@ public class Impresiones {
             if(listaFigura instanceof Cuadrado3D){
                 System.out.println("CUBO");
                 Cuadrado3D cuadrado = (Cuadrado3D) listaFigura;                
-                System.out.println("Área de este " + "" + ":" + listaFigura.getArea() + "\n Volumen :" +cuadrado.getVolumen());
+                System.out.println("Área de este " + cuadrado.getTipo() + ":" + listaFigura.getArea() + "\n Volumen :" +cuadrado.getVolumen());
             }
             if(listaFigura instanceof Triangulo3D){
                 System.out.println("PIRAMIDE");
@@ -114,9 +118,6 @@ public class Impresiones {
                 Circulo3D circulo = (Circulo3D) listaFigura;                
                 System.out.println("Área de este circulo"+ ":" + listaFigura.getArea() + "\n Volumen :" + circulo.getVolumen());
             }
-        }
-        
-    }
-    
-    
+        }        
+    } 
 }

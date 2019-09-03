@@ -6,24 +6,36 @@
 package Figuras;
 
 /**
- *
- * @author USER
+ * Clase que representa las figuras y hereda de la clase Comportamiento
+ * @author ISAACELEAZAR
  */
 public abstract class Figuras implements Comportamiento{
-    
+    /**
+     * Variable que representa el area de la figura
+     */
     private double area;
-
+    /**
+     * 
+     * @return 
+     */
     public double getArea() {
         return area;
     }
-
+    /**
+     * 
+     * @param area 
+     */
     public void setArea(double area) {
         this.area = area;
     }
-
+    /**
+     * 
+     */
     public Figuras() {        
     }
-
+    /**
+     * 
+     */
     @Override
     public void hallarArea(){
         

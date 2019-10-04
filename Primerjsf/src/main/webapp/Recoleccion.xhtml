@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+        <h:outputText value="Nombre:"/>
+        <h:inputText value="#{Recoleccion.nombre}" required="true" requiredMessage="Ingrese un nombre"/>
+        <br></br><br></br>
+        <h:outputText value="Apellido:"/>
+        <h:inputText value="#{Recoleccion.apellido}" required="true" requiredMessage="Ingrese un apellido"/>
+        <br></br><br></br>
+        <h:outputText value="Profesion:"/>
+        <h:selectOneRadio value="#{Recoleccion.profesion}" required="true" requiredMessage="Seleccione una profesion">
+            <f:selectItem itemValue="Ingenieria" itemLabel="Ingenieria" />
+            <f:selectItem itemValue="Tecnologo" itemLabel="Tecnologo" />
+            <f:selectItem itemValue="Tecnico" itemLabel="Tecnico" />
+            <f:selectItem itemValue="Auxiliar" itemLabel="Auxiliar" />
+        </h:selectOneRadio>
+        <br></br><br></br>
+        <h:outputText value="Sexo:"/>
+        <h:selectOneMenu value="#{Recoleccion.genero}">
+            <f:selectItem itemValue="Hombre" itemLabel="hombre" />
+            <f:selectItem itemValue="Mujer" itemLabel="mujer" />
+        </h:selectOneMenu>
+        <br></br><br></br>
+        <h:outputText value="Que idiomas habla:"/>
+        <h:selectManyCheckbox value="#{Recoleccion.idiomas}" required="true" requiredMessage="Seleccione un idioma">
+            <f:selectItem itemValue="250000" itemLabel="Ingles" />
+            <f:selectItem itemValue="330000" itemLabel="Frances" />
+            <f:selectItem itemValue="500000" itemLabel="Aleman" />
+        </h:selectManyCheckbox>
+        <br></br><br></br>
+        <h:outputText value="Ubicacion:"/>
+        <h:selectOneRadio value="#{Recoleccion.ubicacion}" required="true" requiredMessage="Seleccione una ubicacion">
+            <f:selectItem itemValue="Facatativa" itemLabel="Facatativa" />
+            <f:selectItem itemValue="A fueras" itemLabel="A fueras" />
+        </h:selectOneRadio>
+        <br></br><br></br>
+        <h:outputText value="Dias de trabajo"/>
+        <h:inputText value="#{Recoleccion.diasTrabajo}" required="true" requiredMessage="Ingrese los dias trabajados"/>
+        <br></br><br></br> 
+        <h:commandButton value="Enviar" action= "Pago"></h:commandButton>
+            <br></br><br></br>
+        </h:form>
+    </h:body>
+</html>
+

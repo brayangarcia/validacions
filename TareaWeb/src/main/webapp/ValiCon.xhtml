@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Validaciones controlador</h1>
+        <br></br>
+            <h:outputText value="Vacio:"/>
+            <h:inputText id="vacio" value="#{validaciones.vacios}"/>
+            <h:outputText value="#{validaciones.errorVacio}" style=" color: red; font-size:large; "/>
+            <br></br>
+            <br></br>
+            <h:outputText value="Tamaño: "/>
+            <h:inputText id="tamaño" label="Tamaño" value="#{validaciones.tamano}">
+            </h:inputText> 
+            <br></br>
+            <br></br>
+            <h:outputText value="Email: "/>
+            <h:inputText id="email" label="Email" value="#{validaciones.correo}" >
+            </h:inputText>   
+            <br></br>
+            <br></br>
+            <h:outputText value="Valores: "/>
+            <h:inputText id="valores" label="Valores" value="#{validaciones.valores}" onkeypress="if((event.which &lt; 48 &amp;&amp; event.which != 44 &amp;&amp; event.which != 46) || event.which &gt; 57) return false;">
+            </h:inputText> 
+            <br></br>
+            <br></br>
+            <h:outputText value="Fecha (dia/mes/año): "/>
+            <h:inputText  id="fecha" label="Fecha" value="#{validaciones.fecha}">
+            </h:inputText>
+            <br></br>
+            <br></br>
+            <h:outputText  value="Moneda: "/>
+            <h:inputText  id="moneda" label="Moneda" value="#{validaciones.moneda}">
+            </h:inputText>
+            <br></br>
+            <br></br>
+            <h:commandButton value ="Probar" actionListener="${validaciones.validar()}" >
+            </h:commandButton>
+            <br></br>
+            <h:outputText value="#{validaciones.error}" style=" color: red; font-size:large; "/>
+        </h:form>
+    </h:body>
+</html>
+

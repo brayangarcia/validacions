@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <h:form>
+            <h:commandButton value="Enviar" action="Contactenos"></h:commandButton>
+            <br></br><br></br>
+            <h:commandButton value="Mision" action= "#{index.IrAmarte}"></h:commandButton>
+            <br></br><br></br>
+            
+            <h:outputText value="Nombre:"/>
+            <h:inputText value="#{index.nombre}"/>
+            <br></br><br></br>
+            <h:outputText value="Contrasena:"/>
+            <h:inputSecret value="#{index.contrasena}"/>
+            <br></br><br></br>
+            <h:outputText value="Terminos y condiciones:"/>
+            <h:selectBooleanCheckbox value="#{index.estado}"/>
+            <br></br><br></br>
+            <h:outputText value="Que idiomas habla:"/>
+            <h:selectManyCheckbox value="#{index.idioma}">
+                <f:selectItem itemValue="Español" itemLabel="Español" />
+                <f:selectItem itemValue="Ingles" itemLabel="Ingles" />
+                <f:selectItem itemValue="Portugues" itemLabel="Portugues" />
+            </h:selectManyCheckbox>
+            <br></br><br></br>
+            <h:outputText value="Programacion:"/>
+            <h:selectManyListbox value="#{index.programacion}">
+                <f:selectItem itemValue="c++" itemLabel="c++" />
+                <f:selectItem itemValue="java" itemLabel="java" />
+                <f:selectItem itemValue="c#" itemLabel="c#" />
+            </h:selectManyListbox>
+            <br></br><br></br>
+            <h:outputText value="Sexo:"/>
+            <h:selectOneRadio value="#{index.genero}">
+                <f:selectItem itemValue="h" itemLabel="hombre" />
+                <f:selectItem itemValue="m" itemLabel="mujer" />
+                <f:selectItem itemValue="o" itemLabel="otro" />
+            </h:selectOneRadio>
+            <br></br><br></br>
+            <h:outputText value="Sexo:"/>
+            <h:selectOneMenu value="#{index.genero}">
+                <f:selectItem itemValue="h" itemLabel="hombre" />
+                <f:selectItem itemValue="m" itemLabel="mujer" />
+                <f:selectItem itemValue="o" itemLabel="otro" />
+            </h:selectOneMenu>
+            <br></br><br></br>
+        </h:form>
+    </h:body>
+</html>
+
